@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UI-test</title>
+
+<style>
+body {
+    background-color: darkgrey;
+    }
+.box {
+  width: 820px;
+  height: 741px;
+  z-index: 1;
+  background-image:url("6365167-fig-1-source-large.gif");
+}
+.position-num {
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+  padding: 20px;
+  background-color: yellow;
+  z-index: 2;
+}
+.position-num h2 {
+  text-align: center;
+  font-size: 18px;
+} 
+</style>
+</head>
+
+<body>
+
+   <div class="box" id="js-target-top"></div>
+
+   <div class="position-num">
+        Valence:<span id="js-related-pos-x"></span><br>
+        Arousal:<span id="js-related-pos-y"></span>
+   </div>
+
+    
+    
+<script>
+(function(){
+  // クリックターゲット
+  var targetTop = document.getElementById('js-target-top');
+
+  // 数値挿入箇所
+  var spanRelatedX = document.getElementById('js-related-pos-x');
+  var spanRelatedY = document.getElementById('js-related-pos-y');
+
+  targetTop.addEventListener('click', clickPosition);
+  targetBottom.addEventListener('click', clickPosition);
+
+  function clickPosition(e){
+    var relatedX = (e.offsetX)/820;
+    var relatedY = Math.abs((e.offsetY-741)/741);
+    spanRelatedX.innerHTML = relatedX ;
+    spanRelatedY.innerHTML = relatedY ;
+  }
+}());</script>
+</body>
+</html>
