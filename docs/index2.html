@@ -49,7 +49,7 @@
             <option value="quiet">静かな気分</option>
             <option value="adoring">憧れた気分</option>
         </select>
-        <input type="button" id="button1" value="ボタン1" />
+        <input type="button" id="button1" class="btn btn-primary" value="ボタン1" />
         
         <div><p>選択した気分：<span id="span1"></span></p></div>
 
@@ -57,7 +57,6 @@
                 
         <script type="text/javascript">
         $(window).on('load', function () {
-
             $("#button1").click(function() {
                 // value値を取得
                 var str1 = $("#color1").val();
